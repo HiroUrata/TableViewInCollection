@@ -28,7 +28,16 @@ class ViewController: UIViewController {
 
 extension ViewController:UITableViewDelegate{
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return "Section"
+        
+    }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return CollectionViewCell.colorArray.count
+    }
     
 }
 
