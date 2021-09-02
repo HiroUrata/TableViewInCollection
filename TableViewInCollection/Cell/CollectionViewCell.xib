@@ -16,25 +16,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="111" height="112"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtZ-Hu-SmN">
-                        <rect key="frame" x="0.0" y="0.0" width="111" height="112"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kYY-3X-vrZ">
+                        <rect key="frame" x="0.0" y="-1" width="111" height="113"/>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="EtZ-Hu-SmN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7PR-QB-bRW"/>
-                <constraint firstItem="EtZ-Hu-SmN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="h73-S4-gYl"/>
-                <constraint firstAttribute="bottom" secondItem="EtZ-Hu-SmN" secondAttribute="bottom" id="qRo-R6-jvE"/>
-                <constraint firstAttribute="trailing" secondItem="EtZ-Hu-SmN" secondAttribute="trailing" id="ti1-Uq-gA8"/>
+                <constraint firstAttribute="bottom" secondItem="kYY-3X-vrZ" secondAttribute="bottom" constant="-0.5" id="7FI-co-gM7"/>
+                <constraint firstItem="kYY-3X-vrZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IY7-fl-7N9"/>
+                <constraint firstAttribute="trailing" secondItem="kYY-3X-vrZ" secondAttribute="trailing" id="RR5-bU-098"/>
+                <constraint firstItem="kYY-3X-vrZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="-0.5" id="dFz-fa-CVp"/>
             </constraints>
             <size key="customSize" width="111" height="112"/>
             <connections>
-                <outlet property="colorView" destination="EtZ-Hu-SmN" id="nTs-Mi-9RN"/>
+                <outlet property="imageView" destination="kYY-3X-vrZ" id="gi2-AS-WAO"/>
             </connections>
             <point key="canvasLocation" x="181.8840579710145" y="123.21428571428571"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+    </resources>
 </document>

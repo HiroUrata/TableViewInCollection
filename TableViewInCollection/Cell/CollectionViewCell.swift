@@ -9,7 +9,8 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     static let identifire = "CollectionViewCell"
     static let nib = {() -> UINib in return UINib(nibName: "CollectionViewCell", bundle: nil)}

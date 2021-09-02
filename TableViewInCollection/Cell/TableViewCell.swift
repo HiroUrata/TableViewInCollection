@@ -57,7 +57,7 @@ extension TableViewCell:UICollectionViewDataSource{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifire, for: indexPath) as! CollectionViewCell
         
-        cell.colorView.backgroundColor = CollectionViewCell.colorArray[indexPath.row]
+        cell.imageView.tintColor = CollectionViewCell.colorArray[indexPath.row]
         
         return cell
         
