@@ -11,46 +11,48 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    var colorModel = [ColorModel]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
         tableView.dataSource = self
-        collectionView.dataSource = self
+        
+        tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifire)
         
     }
 
-    
 
+}
+
+extension ViewController:UITableViewDelegate{
+    
+    
+    
 }
 
 extension ViewController:UITableViewDataSource{
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return tableView.frame.size.height / 4
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        
+        return colorModel.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifire, for: indexPath) as! TableViewCell
+        
+        return cell
     }
-    
-    
-    
-    
-}
-
-extension ViewController:UICollectionViewDataSource{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
-    }
-    
-    
     
     
 }

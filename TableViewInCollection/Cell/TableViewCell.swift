@@ -9,9 +9,15 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    static let identifire = "TableViewCell"
+    
+    static let nib = {() -> UINib in return UINib(nibName: "TableViewCell", bundle: nil)}
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -19,5 +25,7 @@ class TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+ 
+    
     
 }
