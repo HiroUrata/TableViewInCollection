@@ -11,7 +11,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var colorModel = [ColorModel]()
     
     
     override func viewDidLoad() {
@@ -43,7 +42,7 @@ extension ViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return colorModel.count
+        return 1
         
     }
     
