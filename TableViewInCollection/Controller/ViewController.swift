@@ -30,13 +30,13 @@ extension ViewController:UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return "Section"
+        return ImageURLModel.SearchKeysectionTitleArray[section]
         
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return CollectionViewCell.colorArray.count
+        return ImageURLModel.SearchKeysectionTitleArray.count
     }
     
 }

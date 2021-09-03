@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TableViewCell: UITableViewCell {
 
@@ -48,7 +49,7 @@ extension TableViewCell:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return CollectionViewCell.colorArray.count
+        ImageURLModel.imageURLArrays[section].count
         
     }
     
@@ -57,7 +58,8 @@ extension TableViewCell:UICollectionViewDataSource{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifire, for: indexPath) as! CollectionViewCell
         
-        cell.imageView.tintColor = CollectionViewCell.colorArray[indexPath.row]
+        cell.imageView.contentMode = .scaleAspectFit
+        //cell.imageView.tintColor = CollectionViewCell.colorArray[indexPath.row]
         
         return cell
         

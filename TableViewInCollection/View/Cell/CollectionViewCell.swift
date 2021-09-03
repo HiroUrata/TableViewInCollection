@@ -14,7 +14,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     static let identifire = "CollectionViewCell"
     static let nib = {() -> UINib in return UINib(nibName: "CollectionViewCell", bundle: nil)}
-    static let colorArray = [UIColor.systemGreen,UIColor.systemTeal,UIColor.systemIndigo,UIColor.systemRed,UIColor.systemGray]
+//    static let colorArray = [UIColor.systemGreen,UIColor.systemTeal,UIColor.systemIndigo,UIColor.systemRed,UIColor.systemGray]
     
     override func awakeFromNib() {
         super.awakeFromNib()
