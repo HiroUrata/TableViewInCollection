@@ -11,16 +11,20 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        Alamofire.searchGetImageURL()
         
-        tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifire)
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
+            
+            print(ImageURLModel.imageURLArrays)
+            tableView.delegate = self
+            tableView.dataSource = self
+            
+            tableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifire)
+            tableView.reloadData()
+        }
     }
 
 
@@ -30,13 +34,13 @@ extension ViewController:UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return ImageURLModel.SearchKeysectionTitleArray[section]
+        return ImageURLModel.SearchKeysectionTitle
         
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return ImageURLModel.SearchKeysectionTitleArray.count
+        return 5
     }
     
 }

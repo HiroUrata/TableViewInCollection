@@ -49,7 +49,7 @@ extension TableViewCell:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        ImageURLModel.imageURLArrays[section].count
+        ImageURLModel.imageURLArrays.count
         
     }
     
@@ -58,6 +58,7 @@ extension TableViewCell:UICollectionViewDataSource{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifire, for: indexPath) as! CollectionViewCell
         
+        cell.imageView.sd_setImage(with: ImageURLModel.imageURLArrays[indexPath.row], completed: nil)
         cell.imageView.contentMode = .scaleAspectFit
         //cell.imageView.tintColor = CollectionViewCell.colorArray[indexPath.row]
         

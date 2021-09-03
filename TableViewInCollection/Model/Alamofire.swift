@@ -12,25 +12,21 @@ import SwiftyJSON
 
 class Alamofire{
     
-    func searchGetImageURL(){
-        
-        var selectArrayCount = 0
-        
-        ImageURLModel.SearchKeysectionTitleArray.forEach({
-            
+    static func searchGetImageURL(){
+    
             //commit時apikeyにモザイク
-            AF.request("https://pixabay.com/api/?key=22343236-f9a23846f5c6250f4483d03d6&q=\($0)",method: .get,parameters: nil,encoding: JSONEncoding.default).responseJSON { (response) in
-                
+        AF.request("https://pixabay.com/api/?key=APIKey&q=\(ImageURLModel.SearchKeysectionTitle)",method: .get,parameters: nil,encoding: JSONEncoding.default).responseJSON { (response) in
+
                 switch response.result{
                 
                 case.success:
-                    ImageURLModel.imageURLArrays = [[]] //一度、空にする
+                    ImageURLModel.imageURLArrays = [] //一度、空にする
                     
                     for getUrlCount in 0...4{
                         
                         if JSON(response.data as Any)["hits"][getUrlCount]["webformatURL"].string != nil{
                             
-                            ImageURLModel.imageURLArrays[selectArrayCount].append(URL(string: JSON(response.data as Any)["hits"][getUrlCount]["webformatURL"].string!)!)
+                            ImageURLModel.imageURLArrays.append(URL(string: JSON(response.data as Any)["hits"][getUrlCount]["webformatURL"].string!)!)
                             
                         }else{  //取得できる"webformatURL"が無くなった時に処理を終わらせる
                             
@@ -39,7 +35,6 @@ class Alamofire{
                         }
                         
                     }
-                    selectArrayCount += 1
                 
                 case .failure:
                     let error = NSError()
@@ -47,7 +42,6 @@ class Alamofire{
                     break
                 }
             }
-        })
     }
     
     
