@@ -9,15 +9,16 @@ import Foundation
 
 struct ImageURLModel{
     
-    static var imageURLArrays = [URL]()
+//    static var imageURLArrays = [URL]()
     
 //    static var catImageUrlArray = [URL]()
 //    static var dogImageUrlArray = [URL]()
 //    static var carImageUrlArray = [URL]()
 //    static var seaImageUrlArray = [URL]()
 //    static var sportsImageUrlArray = [URL]()
-    
-    static let SearchKeysectionTitle = "cat"
+    static var imageURLArrays = [[URL](),[URL](),[URL](),[URL](),[URL]()]
+    static let SearchKeysectionTitleArray = ["cat","dog","car","sea","sports"]
+    //static let SearchKeysectionTitle = "cat"
     
 //    init(catImageUrl:URL) {
 //

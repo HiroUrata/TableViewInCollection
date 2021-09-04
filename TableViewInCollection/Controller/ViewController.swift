@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
             
-            print(ImageURLModel.imageURLArrays)
             tableView.delegate = self
             tableView.dataSource = self
             
